@@ -4,6 +4,14 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+At Powershell prompt define the environment variables:
+$env:DD_SERVICE="campainer"
+$env:DD_ENV="dev"
+$env:DD_VERSION="0.1.0"
+
+java -javaagent:"dd-java-agent.jar" -jar ./target/campainer-0.1.0-runner.jar
+
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:

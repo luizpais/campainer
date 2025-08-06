@@ -50,6 +50,7 @@ public class CampainService {
             throw new IllegalArgumentException("Campaign not found with ID: " + id);
         }
     }
+
     // Example method to update a campaign
     @Transactional
     public void updateCampain(CampainDTO campainDTO) {
@@ -62,6 +63,8 @@ public class CampainService {
             campain.endDate = campainDTO.getEndDate();
             campain.persist(); // Assuming you have a method to persist the updated campaign
             LOG.infof("Campaign updated: %s", campain.name);
+
+
         } else {
             LOG.warnf("Attempted to update non-existing campaign with ID: %d", campainDTO.getId());
             throw new IllegalArgumentException("Campaign not found with ID: " + campainDTO.getId());
